@@ -1,2 +1,6 @@
-# MyGitBook
-链接到gitbook的repository.
+我的电子书
+--------
+用于记录工作学习中用到的或见到的一些代码,一些思考.
+_______
+图文无关,放一下Masami而已.
+![么么哒](https://miao.su/images/2017/05/26/e3b4bae1583280a01e949be9b932a60f_rc7e1b.jpg)
