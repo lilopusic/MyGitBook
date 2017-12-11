@@ -1,10 +1,11 @@
-###自定义事件使用###
+###自定义事件使用
 最近做了一个功能，大概是这个样子的，有两层堆叠在一起的div元素，下面那一层有拖拽的功能，但是上面的一层div元素遮盖住了下方的div，造成的现象是当拖拽到上层div所在的区域之时，下方的mousemove/mousedown/mouseup等事件无法触发。
 
 所以要做的事情很简单，在上层的div区域，手动触发下方的div，这里便可以用自定义事件来解决。
 
 贴一下代码：
-```
+```js
+
 let contents = document.body.querySelectorAll('.needPreventDefault');
 contents = Array.prototype.slice.call(content);
 for(let i=0;i<contents.length;i++) {
@@ -29,6 +30,7 @@ function dispatchCustomEvent(event, targetId) {
     }
     document.getElementById(targetId).dispatchEvent(new MouseEvent(event.type,eventOption));
 }
+
 ```
 这样，当鼠标在具有*needPreventDefault*类的dom上触发的mousemove/mousedown/mouseup事件，会被阻止冒泡并且手动触发到id为*targetId*的dom元素上。
 
